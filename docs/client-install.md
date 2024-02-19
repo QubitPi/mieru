@@ -2,7 +2,9 @@
 
 ## Download mieru client
 
-The mieru client supports Windows, Mac OS, and Linux. Users can download it from the GitHub Releases page. After unzip, place the mieru executable under the system path `PATH`.
+The mieru client supports Windows, Mac OS, and Linux. Users can download it from the
+[GitHub Releases page](https://github.com/enfein/mieru/releases). After unzip, place the mieru executable under the 
+system path `PATH`.
 
 If your client OS is Linux, you can also install mieru using the debian and RPM installers.
 
@@ -92,6 +94,21 @@ mieru start
 ```
 
 If the output shows `mieru client is started, listening to 127.0.0.1:xxxx`, it means that the mieru client is up and running.
+
+> [!TIP]
+> **Configuring Proxies on Mac after mieru starts**
+>
+> To to **System Settings** | **Network** | **Details** | **Proxies** | Toggle-enable **SOCKS proxy** and use the
+> following proxy configs:
+>
+> - Server: **127.0.0.1**
+> - Port: The _socks5Port_ value from `client_config.json` above
+> - Toggle-enable **Proxy server requires password**
+>
+>   - Username: The _profiles.user.name_ from `client_config.json` above
+>   - Password: The _profiles.user.password_ from `client_config.json` above
+> 
+> Lastly, click **OK** to activate the SOCKS proxy
 
 The mieru client will not be started automatically with system boot. After restarting the computer, you need to start the client manually with the `mieru start` command.
 

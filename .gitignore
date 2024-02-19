@@ -28,6 +28,7 @@
 *.rpm
 __pycache__/
 
+.idea/
 .vscode/
 
 /coverage.out

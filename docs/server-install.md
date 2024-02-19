@@ -6,6 +6,23 @@ Before installation and configuration, connect to the server via SSH and then ex
 
 ## Download mita installation package
 
+> [!TIP]
+> On Debian / Ubuntu, run
+> 
+> ```console
+> dpkg --print-architecture
+> ```
+> 
+> to see the primary architecture of the machine.
+> 
+> On RPM-based systems, use
+> 
+> ```console
+> rpm --eval '%{_arch}'
+> ```
+> 
+> Reference: https://unix.stackexchange.com/a/181538/437808
+
 ```sh
 # Debian / Ubuntu - X86_64
 curl -LSO https://github.com/enfein/mieru/releases/download/v3.2.1/mita_3.2.1_amd64.deb
