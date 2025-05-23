@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/github/downloads/enfein/mieru/total.svg?style=flat)](https://github.com/enfein/mieru/releases)
 [![LICENSE](https://img.shields.io/github/license/enfein/mieru.svg?style=flat)](./LICENSE)
 
-[中文文档](./README.zh_CN.md)
+[中文文档](https://github.com/QubitPi/mieru/blob/master/README.zh_CN.md)
 
 mieru is a secure, hard to classify, hard to probe, TCP or UDP protocol-based socks5 / HTTP / HTTPS network proxy software.
 
@@ -36,18 +36,18 @@ The mieru proxy software suite consists of two parts, a client software called m
 
 ## User Guide
 
-1. [Server Installation & Configuration](./docs/server-install.md)
-1. [Client Installation & Configuration](./docs/client-install.md)
-1. [Client Installation & Configuration - OpenWrt](./docs/client-install-openwrt.md)
-1. [Maintenance & Troubleshooting](./docs/operation.md)
-1. [Security Guide](./docs/security.md)
-1. [Compilation](./docs/compile.md)
+1. [Server Installation & Configuration](https://mieru.qubitpi.org/server-install.md)
+1. [Client Installation & Configuration](https://mieru.qubitpi.org/client-install.md)
+1. [Client Installation & Configuration - OpenWrt](https://mieru.qubitpi.org/client-install-openwrt.md)
+1. [Maintenance & Troubleshooting](https://mieru.qubitpi.org/operation.md)
+1. [Security Guide](https://mieru.qubitpi.org/security.md)
+1. [Compilation](https://mieru.qubitpi.org/compile.md)
 
 ## Protocol
 
 The principle of mieru is similar to shadowsocks / v2ray etc. It creates an encrypted channel between the client and the proxy server outside the firewall. GFW cannot decrypt the encrypted transmission and cannot determine the destination you end up visiting, so it has no choice but to let you go.
 
-For an explanation of the mieru protocol, see [mieru Proxy Protocol](./docs/protocol.md).
+For an explanation of the mieru protocol, see [mieru Proxy Protocol](https://mieru.qubitpi.org/protocol.md).
 
 ## Share
 
