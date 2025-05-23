@@ -68,4 +68,12 @@
          <loc>https://ollama.qubitpi.org/server-install.zh_CN/</loc>
          <lastmod>2025-05-23</lastmod>
     </url>
+    <url>
+         <loc>https://ollama.qubitpi.org/zh/</loc>
+         <lastmod>2025-05-23</lastmod>
+    </url>
+    <url>
+         <loc>https://ollama.qubitpi.org/zh/announcement.zh_CN/</loc>
+         <lastmod>2025-05-23</lastmod>
+    </url>
 </urlset>
