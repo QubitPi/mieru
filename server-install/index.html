@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://ollama.qubitpi.org/server-install/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="./">
       
       
         <link rel="next" href="../client-install/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Server Installation & Configuration - Ollama Documentation</title>
+        <title>Home - Ollama Documentation</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Server Installation & Configuration
+              Home
             
           </span>
         </div>
@@ -227,9 +227,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -353,10 +355,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -367,6 +391,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-installation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use installation script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-mita-installation-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download mita installation package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-mita-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install mita package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grant-permissions-logout-and-login-again-to-make-the-change-effective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant permissions, logout and login again to make the change effective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconnect-the-server-via-ssh-check-mita-daemon-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconnect the server via SSH, check mita daemon status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-mita-working-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check mita working status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-proxy-server-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify proxy server settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-proxy-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start proxy service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bbr-congestion-control-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      BBR Congestion Control Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-outbound-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Outbound Proxy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-policy-in-ipv4-ipv6-dual-stack-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS Policy in IPv4 / IPv6 Dual-Stack Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiting-user-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limiting User Traffic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-install-ntp-network-time-synchronization-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      [Optional] Install NTP network time synchronization service
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -438,7 +614,7 @@
   
   
   <span class="md-ellipsis">
-    Server Installation & Configuration
+    Home
     
   </span>
   
@@ -451,7 +627,7 @@
   
   
   <span class="md-ellipsis">
-    Server Installation & Configuration
+    Home
     
   </span>
   
