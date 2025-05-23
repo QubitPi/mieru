@@ -33,3 +33,5 @@ __pycache__/
 
 /coverage.out
 /coverage.html
+
+.idea/
