@@ -12,28 +12,26 @@
         <meta name="author" content="QubitPi (https://github.com/Qubitpi)">
       
       
-        <link rel="canonical" href="https://ollama.qubitpi.org/client-install-openwrt/">
+        <link rel="canonical" href="https://ollama.qubitpi.org/">
       
       
-        <link rel="prev" href="../client-install/">
+      
+        <link rel="next" href="server-install/">
       
       
-        <link rel="next" href="../security/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>OpenWrt - Ollama Documentation</title>
+        <title>Ollama Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/css/customizations.css">
+      <link rel="stylesheet" href="assets/css/customizations.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#client-installation-configuration-openwrt" class="md-skip">
+        <a href="#mieru" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Ollama Documentation" class="md-header__button md-logo" aria-label="Ollama Documentation" data-md-component="logo">
+    <a href="." title="Ollama Documentation" class="md-header__button md-logo" aria-label="Ollama Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenWrt
+              Home
             
           </span>
         </div>
@@ -227,9 +225,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
         
   
   
@@ -250,7 +250,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../server-install/" class="md-tabs__link">
+        <a href="server-install/" class="md-tabs__link">
           
   
   
@@ -266,13 +266,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../client-install/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="client-install/" class="md-tabs__link">
           
   
   
@@ -292,7 +290,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../security/" class="md-tabs__link">
+        <a href="security/" class="md-tabs__link">
           
   
   
@@ -312,7 +310,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../compile/" class="md-tabs__link">
+        <a href="compile/" class="md-tabs__link">
           
   
   
@@ -346,7 +344,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Ollama Documentation" class="md-nav__button md-logo" aria-label="Ollama Documentation" data-md-component="logo">
+    <a href="." title="Ollama Documentation" class="md-nav__button md-logo" aria-label="Ollama Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -373,10 +371,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
         
   
   
@@ -387,6 +407,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third Party Clients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Share
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact Us
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -441,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-install/" class="md-nav__link">
+      <a href="server-install/" class="md-nav__link">
         
   
   
@@ -468,29 +571,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -503,7 +603,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Client Setup
@@ -517,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-install/" class="md-nav__link">
+      <a href="client-install/" class="md-nav__link">
         
   
   
@@ -537,32 +637,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    OpenWrt
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="client-install-openwrt/" class="md-nav__link">
         
   
   
@@ -573,53 +651,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-mieru-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download mieru client
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modify-proxy-client-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modify proxy client settings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-proxy-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start proxy client
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -682,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+      <a href="security/" class="md-nav__link">
         
   
   
@@ -705,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operation/" class="md-nav__link">
+      <a href="operation/" class="md-nav__link">
         
   
   
@@ -778,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compile/" class="md-nav__link">
+      <a href="compile/" class="md-nav__link">
         
   
   
@@ -801,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../protocol/" class="md-nav__link">
+      <a href="protocol/" class="md-nav__link">
         
   
   
@@ -851,27 +882,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#download-mieru-client" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Download mieru client
+      Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#modify-proxy-client-settings" class="md-nav__link">
+  <a href="#third-party-clients" class="md-nav__link">
     <span class="md-ellipsis">
-      Modify proxy client settings
+      Third Party Clients
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-proxy-client" class="md-nav__link">
+  <a href="#user-guide" class="md-nav__link">
     <span class="md-ellipsis">
-      Start proxy client
+      User Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Share
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact Us
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
     </span>
   </a>
   
@@ -893,7 +960,7 @@
 
 
   
-    <a href="https://github.com/QubitPi/ollama/edit/master/docs/client-install-openwrt.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/QubitPi/ollama/edit/master/docs/README.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -902,24 +969,62 @@
     
       
     
-    <a href="https://github.com/QubitPi/ollama/raw/master/docs/client-install-openwrt.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/QubitPi/ollama/raw/master/docs/README.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="client-installation-configuration-openwrt"><a class="toclink" href="#client-installation-configuration-openwrt">Client Installation &amp; Configuration - OpenWrt</a></h1>
-<p>OpenWrt is a minimal Linux distribution, and additional steps are required to run the mieru client in an OpenWrt environment. Please refer to the <a href="../client-install/">Client Installation &amp; Configuration</a> guide, and follow the instructions here to install and configure the mieru client.</p>
-<h2 id="download-mieru-client"><a class="toclink" href="#download-mieru-client">Download mieru client</a></h2>
-<p>After downloading the mieru client software, please copy the extracted mieru executable file to the <code>/usr/bin/</code> directory on the OpenWrt system.</p>
-<h2 id="modify-proxy-client-settings"><a class="toclink" href="#modify-proxy-client-settings">Modify proxy client settings</a></h2>
-<p>To allow other devices to connect to the proxy client on OpenWrt, you must set <code>socks5ListenLAN</code> to <code>true</code>. If you enable HTTP/HTTPS proxy, <code>httpProxyListenLAN</code> must also be set to <code>true</code>.</p>
-<p>In OpenWrt, do not use the <code>mieru apply config &lt;FILE&gt;</code> and <code>mieru describe config</code> commands. Please save the client configuration directly to the <code>/etc/mieru_client_config.json</code> file.</p>
-<p>Additionally, it is recommended to set the log level <code>loggingLevel</code> to <code>ERROR</code> to prevent logs from filling up the disk.</p>
-<h2 id="start-proxy-client"><a class="toclink" href="#start-proxy-client">Start proxy client</a></h2>
-<p>To start and stop the client, please do not use the <code>mieru start</code> and <code>mieru stop</code> commands. Please copy the <code>configs/examples/etc_initd_mieru</code> file from the project root directory to the <code>/etc/init.d/mieru</code> file, and grant it executable permission. Afterwards, the mieru client will automatically start when OpenWrt boots up.</p>
-<p>If you need to manually start or stop the mieru client, you can use the commands <code>/etc/init.d/mieru start</code> and <code>/etc/init.d/mieru stop</code>.</p>
+<h1 id="mieru"><a class="toclink" href="#mieru">見える / mieru</a></h1>
+<p><a href="https://github.com/enfein/mieru/actions/workflows/ci.yaml"><img alt="Build Status" src="https://github.com/enfein/mieru/actions/workflows/ci.yaml/badge.svg" /></a>
+<a href="https://github.com/enfein/mieru/releases"><img alt="Releases" src="https://img.shields.io/github/release/enfein/mieru/all.svg?style=flat" /></a>
+<a href="https://github.com/enfein/mieru/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/enfein/mieru/total.svg?style=flat" /></a>
+<a href="./LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/enfein/mieru.svg?style=flat" /></a></p>
+<p><a href="https://github.com/QubitPi/mieru/blob/master/README.zh_CN.md">中文文档</a></p>
+<p>mieru is a secure, hard to classify, hard to probe, TCP or UDP protocol-based socks5 / HTTP / HTTPS network proxy software.</p>
+<p>The mieru proxy software suite consists of two parts, a client software called mieru, and a proxy server software called mita.</p>
+<h2 id="features"><a class="toclink" href="#features">Features</a></h2>
+<ol>
+<li>Provides socks5, HTTP, and HTTPS proxy interfaces.</li>
+<li>Does not use TLS protocol. No need to register a domain name or set up a fake website.</li>
+<li>Uses the high-strength XChaCha20-Poly1305 encryption algorithm that generates encryption keys based on username, password and system time.</li>
+<li>Utilizes random padding and replay attack detection to prevent GFW from detecting the mieru service.</li>
+<li>Supports multiple users sharing a single proxy server.</li>
+<li>Supports both IPv4 and IPv6.</li>
+</ol>
+<h2 id="third-party-clients"><a class="toclink" href="#third-party-clients">Third Party Clients</a></h2>
+<ul>
+<li>Desktop (Windows, MacOS, Linux)</li>
+<li><a href="https://www.clashverge.dev/">Clash Verge Rev</a></li>
+<li><a href="https://mihomo.party/">Mihomo Party</a></li>
+<li>Android</li>
+<li><a href="https://github.com/MetaCubeX/ClashMetaForAndroid">ClashMetaForAndroid</a></li>
+<li><a href="https://clashmi.app/">ClashMi</a></li>
+<li><a href="https://github.com/dyhkwong/Exclave">Exclave</a> with <a href="https://github.com/dyhkwong/Exclave/releases?q=mieru-plugin">mieru plugin</a></li>
+<li><a href="https://github.com/xchacha20-poly1305/husi">husi</a> with <a href="https://github.com/xchacha20-poly1305/husi/releases?q=plugin-mieru">mieru plugin</a></li>
+<li><a href="https://github.com/MatsuriDayo/NekoBoxForAndroid">NekoBoxForAndroid</a> with <a href="https://github.com/enfein/NekoBoxPlugins">mieru plugin</a></li>
+<li>iOS</li>
+<li><a href="https://clashmi.app/">ClashMi</a></li>
+</ul>
+<h2 id="user-guide"><a class="toclink" href="#user-guide">User Guide</a></h2>
+<ol>
+<li><a href="https://mieru.qubitpi.org/server-install.md">Server Installation &amp; Configuration</a></li>
+<li><a href="https://mieru.qubitpi.org/client-install.md">Client Installation &amp; Configuration</a></li>
+<li><a href="https://mieru.qubitpi.org/client-install-openwrt.md">Client Installation &amp; Configuration - OpenWrt</a></li>
+<li><a href="https://mieru.qubitpi.org/operation.md">Maintenance &amp; Troubleshooting</a></li>
+<li><a href="https://mieru.qubitpi.org/security.md">Security Guide</a></li>
+<li><a href="https://mieru.qubitpi.org/compile.md">Compilation</a></li>
+</ol>
+<h2 id="protocol"><a class="toclink" href="#protocol">Protocol</a></h2>
+<p>The principle of mieru is similar to shadowsocks / v2ray etc. It creates an encrypted channel between the client and the proxy server outside the firewall. GFW cannot decrypt the encrypted transmission and cannot determine the destination you end up visiting, so it has no choice but to let you go.</p>
+<p>For an explanation of the mieru protocol, see <a href="https://mieru.qubitpi.org/protocol.md">mieru Proxy Protocol</a>.</p>
+<h2 id="share"><a class="toclink" href="#share">Share</a></h2>
+<p>If you think this software is helpful, please share to your friends. Thanks!</p>
+<h2 id="contact-us"><a class="toclink" href="#contact-us">Contact Us</a></h2>
+<p>Use GitHub issue.</p>
+<h2 id="license"><a class="toclink" href="#license">License</a></h2>
+<p>Use of this software is subject to the GPL-3 license.</p>
 
 
 
@@ -978,10 +1083,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
