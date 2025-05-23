@@ -1,0 +1,1 @@
+../client-install-openwrt.zh_CN.md

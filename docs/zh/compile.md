@@ -1,0 +1,1 @@
+../compile.zh_CN.md

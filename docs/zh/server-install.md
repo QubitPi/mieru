@@ -1,0 +1,1 @@
+../server-install.zh_CN.md
