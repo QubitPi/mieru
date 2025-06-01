@@ -1051,8 +1051,10 @@ sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </sp
 <h3 id="bbr"><a class="toclink" href="#bbr">BBR 拥塞控制算法</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR">BBR</a> 是一种不依赖于丢包的拥塞控制算法。在恶劣的网络情况下，使用 BBR 的网络传输速度比传统算法更快。</p>
 <p>mieru 的 UDP 传输协议已经使用了 BBR 算法。</p>
-<p>在项目根目录下，我们提供了脚本 <code>tools/enable_tcp_bbr.py</code>，允许用户在 Linux 系统中让 TCP 传输协议使用 BBR 算法。</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./tools/enable_tcp_bbr.py
+<p>运行以下脚本在 Linux 系统中让 TCP 传输协议使用 BBR 算法。</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fSsLO<span class="w"> </span>https://raw.githubusercontent.com/enfein/mieru/refs/heads/main/tools/enable_tcp_bbr.py
+chmod<span class="w"> </span>+x<span class="w"> </span>enable_tcp_bbr.py
+sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <p>上述脚本可以在服务器和客户端中使用。</p>
 <h3 id="_6"><a class="toclink" href="#_6">配置出站代理</a></h3>

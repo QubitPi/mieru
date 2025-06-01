@@ -1234,8 +1234,10 @@ sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </sp
 <h3 id="bbr-congestion-control-algorithm"><a class="toclink" href="#bbr-congestion-control-algorithm">BBR Congestion Control Algorithm</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR">BBR</a> is a congestion control algorithm that does not rely on packet loss. Under poor network conditions, network transmission using BBR is faster than traditional algorithms.</p>
 <p>mieru's UDP transmission protocol already uses the BBR algorithm.</p>
-<p>Under the project root directory, we provide a script <code>tools/enable_tcp_bbr.py</code>, which allows users to enable BBR algorithm on TCP transmission protocol on Linux.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./tools/enable_tcp_bbr.py
+<p>Run the following script to use BBR algorithm on TCP transmission protocol on Linux.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fSsLO<span class="w"> </span>https://raw.githubusercontent.com/enfein/mieru/refs/heads/main/tools/enable_tcp_bbr.py
+chmod<span class="w"> </span>+x<span class="w"> </span>enable_tcp_bbr.py
+sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <p>That script can be used on both server side and client side.</p>
 <h3 id="configuring-outbound-proxy"><a class="toclink" href="#configuring-outbound-proxy">Configuring Outbound Proxy</a></h3>

@@ -962,7 +962,7 @@
 <li>在 <code>profiles</code> -&gt; <code>servers</code> -&gt; <code>ipAddress</code> 属性中，填写代理服务器的公网地址。支持 IPv4 和 IPv6 地址。</li>
 <li>【可选】如果你为代理服务器注册了域名，请在 <code>profiles</code> -&gt; <code>servers</code> -&gt; <code>domainName</code> 中填写域名。否则，请勿修改这个属性。</li>
 <li>在 <code>profiles</code> -&gt; <code>servers</code> -&gt; <code>portBindings</code> -&gt; <code>port</code> 中填写 mita 监听的 TCP 或 UDP 端口号。这个端口号必须与代理服务器中的设置相同。如果想要监听连续的端口号，也可以改为使用 <code>portRange</code> 属性。</li>
-<li>【可选】请为 <code>profiles</code> -&gt; <code>mtu</code> 属性中指定一个从 1280 到 1400 之间的值。默认值为 1400。这个值可以与代理服务器中的设置不同。</li>
+<li>【可选】请为 <code>profiles</code> -&gt; <code>mtu</code> 属性中指定一个从 1280 到 1400 之间的值。默认值为 1400。这个值必须与代理服务器相同。</li>
 <li>【可选】如果想要调整多路复用的频率，是更多地创建新连接，还是更多地重用旧连接，可以为 <code>profiles</code> -&gt; <code>multiplexing</code> -&gt; <code>level</code> 属性设定一个值。这里可以使用的值包括 <code>MULTIPLEXING_OFF</code>, <code>MULTIPLEXING_LOW</code>, <code>MULTIPLEXING_MIDDLE</code>, <code>MULTIPLEXING_HIGH</code>。其中 <code>MULTIPLEXING_OFF</code> 会关闭多路复用功能。默认值为 <code>MULTIPLEXING_LOW</code>。</li>
 <li>请为 <code>rpcPort</code> 属性指定一个从 1025 到 65535 之间的数值。</li>
 <li>请为 <code>socks5Port</code> 属性指定一个从 1025 到 65535 之间的数值。该端口不能与 <code>rpcPort</code> 相同。</li>
