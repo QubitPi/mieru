@@ -884,6 +884,15 @@
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
+      允许用户访问内网
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
       限制用户流量
     </span>
   </a>
@@ -947,29 +956,29 @@ sudo<span class="w"> </span>python3<span class="w"> </span>setup.py<span class="
 <p>或者，你也可以使用以下步骤手动安装并配置代理服务器。</p>
 <h2 id="mita"><a class="toclink" href="#mita">下载 mita 安装包</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita_3.15.0_amd64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita_3.16.0_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita_3.15.0_arm64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita_3.16.0_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita-3.15.0-1.x86_64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita-3.16.0-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita-3.15.0-1.aarch64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita-3.16.0-1.aarch64.rpm
 </code></pre></div>
 <h2 id="mita_1"><a class="toclink" href="#mita_1">安装 mita 软件包</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.15.0_amd64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.0_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.15.0_arm64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.0_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.15.0-1.x86_64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.0-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.15.0-1.aarch64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.0-1.aarch64.rpm
 </code></pre></div>
 <p>上述指令也可以用来升级 mita 软件包的版本。</p>
 <h2 id="mita_2"><a class="toclink" href="#mita_2">赋予当前用户操作 mita 的权限，重新登录使此设置生效</a></h2>
@@ -1113,19 +1122,28 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 <li><code>ONLY_IPv4</code>：强制使用 DNS 服务器返回的第一个 IPv4 地址。如果没有 IPv4 地址则连接失败。</li>
 <li><code>ONLY_IPv6</code>：强制使用 DNS 服务器返回的第一个 IPv6 地址。如果没有 IPv6 地址则连接失败。</li>
 </ol>
-<h3 id="_7"><a class="toclink" href="#_7">限制用户流量</a></h3>
-<p>我们可以使用 <code>users</code> -&gt; <code>quotas</code> 属性限制用户可以使用的流量大小。例如，如果想让用户 "ducaiguozei" 在 1 天时间内最多使用 1 GB 流量，并且在 30 天时间内最多使用 10 GB 流量，可以应用下面的设置。</p>
+<h3 id="_7"><a class="toclink" href="#_7">允许用户访问内网</a></h3>
+<p>默认情况下，代理服务器只允许用户向互联网发起代理请求。</p>
+<p>如果需要允许用户通过代理服务器访问私有 IP 地址，例如 <code>192.168.1.100</code>，请设置 <code>users</code> -&gt; <code>allowPrivateIP</code> 属性。</p>
+<p>如果需要允许用户通过代理服务器访问服务器本机，例如 <code>127.0.0.1</code>，请设置 <code>users</code> -&gt; <code>allowLoopbackIP</code> 属性。</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;portBindings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;users&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;portRange&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2012-2022&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;protocol&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;TCP&quot;</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ducaiguozei&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;xijinping&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;allowPrivateIP&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;allowLoopbackIP&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2027</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;protocol&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;TCP&quot;</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;meiyougongchandang&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;caiyouxinzhongguo&quot;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_8"><a class="toclink" href="#_8">限制用户流量</a></h3>
+<p>我们可以使用 <code>users</code> -&gt; <code>quotas</code> 属性限制用户可以使用的流量大小。例如，如果想让用户 "ducaiguozei" 在 1 天时间内最多使用 1 GB 流量，并且在 30 天时间内最多使用 10 GB 流量，可以应用下面的设置。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;users&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ducaiguozei&quot;</span><span class="p">,</span>
@@ -1145,9 +1163,7 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 <span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;meiyougongchandang&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;caiyouxinzhongguo&quot;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="s2">&quot;loggingLevel&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;mtu&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1400</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="ntp"><a class="toclink" href="#ntp">【可选】安装 NTP 网络时间同步服务</a></h2>

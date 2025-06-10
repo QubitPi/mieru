@@ -749,6 +749,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#changing-the-metrics-logging-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Metrics Logging Interval
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#view-user-network-traffic" class="md-nav__link">
     <span class="md-ellipsis">
       View User Network Traffic
@@ -995,6 +1004,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#changing-the-metrics-logging-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Metrics Logging Interval
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#view-user-network-traffic" class="md-nav__link">
     <span class="md-ellipsis">
       View User Network Traffic
@@ -1227,6 +1245,22 @@ mieru<span class="w"> </span>stop
 
 mieru<span class="w"> </span>start
 </code></pre></div>
+<p>All supported logging levels include <code>FATAL</code>, <code>ERROR</code>, <code>WARN</code>, <code>INFO</code>, <code>DEBUG</code> and <code>TRACE</code>.</p>
+<h2 id="changing-the-metrics-logging-interval"><a class="toclink" href="#changing-the-metrics-logging-interval">Changing the Metrics Logging Interval</a></h2>
+<p>By default, mieru / mita prints metrics information in the logs every 10 minutes. If you want to adjust this output interval, use the following settings:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;advancedSettings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;metricsLoggingInterval&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1h30m&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can specify the interval in:</p>
+<ul>
+<li>seconds <code>s</code></li>
+<li>minutes <code>m</code></li>
+<li>hours <code>h</code></li>
+</ul>
+<p>or any combination of these units.</p>
 <h2 id="view-user-network-traffic"><a class="toclink" href="#view-user-network-traffic">View User Network Traffic</a></h2>
 <p>You can run the commands <code>mita get users</code> and <code>mita get quotas</code> on the server to check each user's most recent active time and the amount of network traffic used.</p>
 <div class="highlight"><pre><span></span><code>$ mita get users

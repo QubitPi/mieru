@@ -603,6 +603,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#allow-users-to-access-internal-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allow Users to Access Internal Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limiting-user-traffic" class="md-nav__link">
     <span class="md-ellipsis">
       Limiting User Traffic
@@ -1065,6 +1074,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#allow-users-to-access-internal-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allow Users to Access Internal Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limiting-user-traffic" class="md-nav__link">
     <span class="md-ellipsis">
       Limiting User Traffic
@@ -1130,29 +1148,29 @@ sudo<span class="w"> </span>python3<span class="w"> </span>setup.py
 <p>Or you can manually install and configure proxy server using the steps below.</p>
 <h2 id="download-mita-installation-package"><a class="toclink" href="#download-mita-installation-package">Download mita installation package</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita_3.15.0_amd64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita_3.16.0_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita_3.15.0_arm64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita_3.16.0_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita-3.15.0-1.x86_64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita-3.16.0-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.15.0/mita-3.15.0-1.aarch64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.0/mita-3.16.0-1.aarch64.rpm
 </code></pre></div>
 <h2 id="install-mita-package"><a class="toclink" href="#install-mita-package">Install mita package</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.15.0_amd64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.0_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.15.0_arm64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.0_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.15.0-1.x86_64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.0-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.15.0-1.aarch64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.0-1.aarch64.rpm
 </code></pre></div>
 <p>Those instructions can also be used to upgrade the version of mita software package.</p>
 <h2 id="grant-permissions-logout-and-login-again-to-make-the-change-effective"><a class="toclink" href="#grant-permissions-logout-and-login-again-to-make-the-change-effective">Grant permissions, logout and login again to make the change effective</a></h2>
@@ -1296,19 +1314,28 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 <li><code>ONLY_IPv4</code>: Force to use the first IPv4 address returned by the DNS server. If there is no IPv4 address, the connection fails.</li>
 <li><code>ONLY_IPv6</code>: Force to use the first IPv6 address returned by the DNS server. If there is no IPv6 address, the connection fails.</li>
 </ol>
+<h3 id="allow-users-to-access-internal-network"><a class="toclink" href="#allow-users-to-access-internal-network">Allow Users to Access Internal Network</a></h3>
+<p>By default, proxy server only allows users to send proxy requests to the Internet.</p>
+<p>If you want to allow users to access private IP addresses (e.g., <code>192.168.1.100</code>) through the proxy server, set the <code>users</code> -&gt; <code>allowPrivateIP</code> attribute.</p>
+<p>If you want to allow users to access the server's local machine (e.g., <code>127.0.0.1</code>) through the proxy server, add the <code>users</code> -&gt; <code>allowLoopbackIP</code> attribute.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;users&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ducaiguozei&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;xijinping&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;allowPrivateIP&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;allowLoopbackIP&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;meiyougongchandang&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;caiyouxinzhongguo&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="limiting-user-traffic"><a class="toclink" href="#limiting-user-traffic">Limiting User Traffic</a></h3>
 <p>We can use the <code>users</code> -&gt; <code>quotas</code> property to limit the amount of traffic a user is allowed to use. For example, if you want user "ducaiguozei" to use no more than 1 GB of traffic within 1 day, and no more than 10 GB within 30 days, you can apply the following settings.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;portBindings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;portRange&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2012-2022&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;protocol&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;TCP&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2027</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;protocol&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;TCP&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="s2">&quot;users&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ducaiguozei&quot;</span><span class="p">,</span>
@@ -1328,9 +1355,7 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 <span class="w">            </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;meiyougongchandang&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;caiyouxinzhongguo&quot;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="s2">&quot;loggingLevel&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;mtu&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1400</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="optional-install-ntp-network-time-synchronization-service"><a class="toclink" href="#optional-install-ntp-network-time-synchronization-service">[Optional] Install NTP network time synchronization service</a></h2>
