@@ -1168,7 +1168,12 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <h2 id="ntp"><a class="toclink" href="#ntp">【可选】安装 NTP 网络时间同步服务</a></h2>
 <p>客户端和代理服务器软件会根据用户名、密码和系统时间，分别计算密钥。只有当客户端和服务器的密钥相同时，服务器才能解密和响应客户端的请求。这要求客户端和服务器的系统时间不能有很大的差别。</p>
-<p>为了保证服务器系统时间是精确的，我们建议用户安装 NTP 网络时间服务。在许多 Linux 发行版中，安装 NTP 只需要一行指令</p>
+<p>为了保证服务器系统时间是精确的，我们建议用户启动或安装 NTP 网络时间服务。</p>
+<p>在 Linux 中，如果系统时间同步由 <code>systemd-timesyncd</code> 服务管理，你可以将 <code>/etc/systemd/timesyncd.conf</code> 配置文件更改为如下内容。</p>
+<div class="highlight"><pre><span></span><code>[Time]
+NTP=time.google.com
+</code></pre></div>
+<p>否则，使用下面的指令安装 NTP。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu</span>
 sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ntp
 

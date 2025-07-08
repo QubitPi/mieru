@@ -1360,7 +1360,12 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <h2 id="optional-install-ntp-network-time-synchronization-service"><a class="toclink" href="#optional-install-ntp-network-time-synchronization-service">[Optional] Install NTP network time synchronization service</a></h2>
 <p>The client and proxy server software calculate the key based on the user name, password and system time. The server can decrypt and respond to the client's request only if the client and server have the same key. This requires that the system time of the client and the server must be in sync.</p>
-<p>To ensure that the server system time is accurate, we recommend that users install the NTP network time service. In many Linux distributions, installing NTP is only one command.</p>
+<p>To ensure that the server system time is accurate, we recommend that users enable or install the NTP network time service.</p>
+<p>In Linux, if system time synchronization is controlled by <code>systemd-timesyncd</code> service, you can modify configuration file <code>/etc/systemd/timesyncd.conf</code> to the following.</p>
+<div class="highlight"><pre><span></span><code>[Time]
+NTP=time.google.com
+</code></pre></div>
+<p>Otherwise, install NTP with the following command.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu</span>
 sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ntp
 
