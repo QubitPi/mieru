@@ -898,12 +898,19 @@
 
 <h1 id="deployment"><a class="toclink" href="#deployment">Deployment</a></h1>
 <h2 id="hashicorp"><a class="toclink" href="#hashicorp">HashiCorp</a></h2>
+<p>Opinionated assumptions:</p>
+<ul>
+<li><a href="https://aws.amazon.com/ec2/instance-types/">AWS instance type</a> is set to <code>t2.small</code></li>
+</ul>
 <p><img alt="Packer + Terraform &quot;Error loading hashicorp.png from QubitPi repo&quot;" src="https://github.com/QubitPi/QubitPi/blob/master/img/hashicorp.png?raw=true" /></p>
 <div class="highlight"><pre><span></span><code><span class="go">git clone git@github.com:QubitPi/mieru.git</span>
 <span class="go">cd mieru/hashicorp</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="go">export PKR_VAR_ec2_instance_type=Monday</span>
+<div class="highlight"><pre><span></span><code><span class="go">export PKR_VAR_ec2_region=us-east-2</span>
 </code></pre></div>
+<ul>
+<li><code>PKR_VAR_ec2_region</code>: is the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.Availability">image region</a> where mita <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">AMI</a> will be published to. The published image will be private</li>
+</ul>
 
 
 
