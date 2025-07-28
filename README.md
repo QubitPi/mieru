@@ -19,6 +19,7 @@ The mieru proxy software suite consists of two parts, a client software called m
 1. Utilizes random padding and replay attack detection to prevent GFW from detecting the mieru service.
 1. Supports multiple users sharing a single proxy server.
 1. Supports both IPv4 and IPv6.
+1. State-of-the-art provisioning using HashiCorp
 
 ## Third Party Clients
 

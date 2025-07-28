@@ -10,7 +10,6 @@ site_url: 'https://mieru.qubitpi.org'
 
 theme:
   name: 'material'
-  custom_dir: 'docs/overrides/'
   font:
     text: Poppins
     code: Ubuntu Mono
@@ -121,6 +120,7 @@ nav:
       - 'Installation & Configuration': ./client-install.md
       - 'OpenWrt': ./client-install-openwrt.md
   - 'Operation':
+      - 'Deployment': ./deployment.md
       - 'Security Guide': ./security.md
       - 'Maintenance & Troubleshooting': ./operation.md
   - 'Development':
