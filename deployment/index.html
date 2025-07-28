@@ -12,13 +12,13 @@
         <meta name="author" content="QubitPi (https://github.com/Qubitpi)">
       
       
-        <link rel="canonical" href="https://mieru.qubitpi.org/compile/">
+        <link rel="canonical" href="https://mieru.qubitpi.org/deployment/">
       
       
-        <link rel="prev" href="../operation/">
+        <link rel="prev" href="../client-install-openwrt/">
       
       
-        <link rel="next" href="../protocol/">
+        <link rel="next" href="../security/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Compilation - mieru Documentation</title>
+        <title>Deployment - mieru Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#compilation" class="md-skip">
+        <a href="#deployment" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Compilation
+              Deployment
             
           </span>
         </div>
@@ -286,11 +286,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../deployment/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -306,13 +308,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../compile/" class="md-tabs__link">
           
   
   
@@ -564,26 +564,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -596,7 +599,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Operation
@@ -607,10 +610,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -621,6 +646,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hashicorp" class="md-nav__link">
+    <span class="md-ellipsis">
+      HashiCorp
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -683,29 +737,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -718,7 +769,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Development
@@ -729,19 +780,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../compile/" class="md-nav__link">
         
   
   
@@ -752,7 +794,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -808,6 +849,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hashicorp" class="md-nav__link">
+    <span class="md-ellipsis">
+      HashiCorp
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -822,7 +880,7 @@
 
 
   
-    <a href="https://github.com/QubitPi/mieru/edit/master/docs/compile.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/QubitPi/mieru/edit/master/docs/deployment.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -831,51 +889,21 @@
     
       
     
-    <a href="https://github.com/QubitPi/mieru/raw/master/docs/compile.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/QubitPi/mieru/raw/master/docs/deployment.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="compilation"><a class="toclink" href="#compilation">Compilation</a></h1>
-<p>It is recommended to compile the <code>mieru</code> client and <code>mita</code> server software on Linux. The compilation process might require a proxy to download dependency packages.</p>
-<p>The following softwares are required for compilation:</p>
-<ul>
-<li>curl</li>
-<li>env</li>
-<li>git</li>
-<li>go (version &gt;= 1.20)</li>
-<li>make</li>
-<li>sha256sum</li>
-<li>tar</li>
-<li>zip</li>
-</ul>
-<p>To compile Android executables, you need:</p>
-<ul>
-<li>gcc</li>
-</ul>
-<p>To compile Debian packages, you need:</p>
-<ul>
-<li>dpkg-deb</li>
-<li>fakeroot</li>
-</ul>
-<p>To compile RPM packages, you need:</p>
-<ul>
-<li>rpmbuild</li>
-</ul>
-<p>To compile, navigate to the project's root directory and run the command <code>make</code>. The compilation results will be stored in the <code>release</code> folder under the project's root directory.</p>
-<p>The <code>make</code> command will only generate the officially supported executables. If you want to compile executables for a specific CPU instruction set architecture or operating system, you can refer to the following commands:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Compile the mita server software, which runs on a Linux system with Loongson processor</span>
-env<span class="w"> </span><span class="nv">GOOS</span><span class="o">=</span>linux<span class="w"> </span><span class="nv">GOARCH</span><span class="o">=</span>loong64<span class="w"> </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-trimpath<span class="w"> </span>-ldflags<span class="o">=</span><span class="s2">&quot;-s -w&quot;</span><span class="w"> </span>-o<span class="w"> </span>mita<span class="w"> </span>cmd/mita/mita.go
-
-<span class="c1"># Compile the mieru client software, which runs on a FreeBSD system with x86_64 processor</span>
-env<span class="w"> </span><span class="nv">GOOS</span><span class="o">=</span>freebsd<span class="w"> </span><span class="nv">GOARCH</span><span class="o">=</span>amd64<span class="w"> </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-trimpath<span class="w"> </span>-ldflags<span class="o">=</span><span class="s2">&quot;-s -w&quot;</span><span class="w"> </span>-o<span class="w"> </span>mieru<span class="w"> </span>cmd/mieru/mieru.go
-
-<span class="c1"># Compile the mieru client software, which runs on an OpenWRT system with MIPS processor</span>
-env<span class="w"> </span><span class="nv">GOOS</span><span class="o">=</span>linux<span class="w"> </span><span class="nv">GOARCH</span><span class="o">=</span>mips<span class="w"> </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-trimpath<span class="w"> </span>-ldflags<span class="o">=</span><span class="s2">&quot;-s -w&quot;</span><span class="w"> </span>-o<span class="w"> </span>mieru<span class="w"> </span>cmd/mieru/mieru.go
+<h1 id="deployment"><a class="toclink" href="#deployment">Deployment</a></h1>
+<h2 id="hashicorp"><a class="toclink" href="#hashicorp">HashiCorp</a></h2>
+<p><img alt="Packer + Terraform &quot;Error loading hashicorp.png from QubitPi repo&quot;" src="https://github.com/QubitPi/QubitPi/blob/master/img/hashicorp.png?raw=true" /></p>
+<div class="highlight"><pre><span></span><code><span class="go">git clone git@github.com:QubitPi/mieru.git</span>
+<span class="go">cd mieru/hashicorp</span>
 </code></pre></div>
-<p><strong>Note: The <code>mita</code> server software may not run on operating systems other than Linux.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="go">export PKR_VAR_ec2_instance_type=Monday</span>
+</code></pre></div>
 
 
 
