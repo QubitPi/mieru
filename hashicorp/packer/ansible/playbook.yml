@@ -1,0 +1,77 @@
+# Copyright 2025 Jiaqi Liu. All rights reserved.
+---
+- name: Configure Mita (Mieru) SOCKS5 Proxy Server
+
+  # justification of "hosts: all":
+  # - https://ansible.qubitpi.org/en/latest/inventory_guide/intro_inventory.html#default-groups
+  # - https://developer.hashicorp.com/packer/integrations/hashicorp/ansible/latest/components/provisioner/ansible
+  hosts: all
+
+  become: true # Run tasks with sudo privileges
+
+  vars:
+    mieru_download_url: "https://github.com/enfein/mieru/releases/download/v3.17.0/mieru_3.17.0_linux_amd64.tar.gz"
+    install_dir: "/opt/mieru"
+    config_dir: "/etc/mita"
+    service_name: "mita"
+
+  tasks:
+    - name: Ensure necessary packages are installed (for Ubuntu)
+      ansible.builtin.apt:
+        name:
+          - unzip
+          - curl
+        state: present
+        update_cache: yes
+
+    - name: Create installation directory for Mita
+      ansible.builtin.file:
+        path: "{{ install_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Download Mieru server archive
+      ansible.builtin.get_url:
+        url: "{{ mieru_download_url }}"
+        dest: "/tmp/mieru_server.tar.gz"
+        mode: '0644'
+
+    - name: Unarchive Mieru server
+      ansible.builtin.unarchive:
+        src: "/tmp/mieru_server.tar.gz"
+        dest: "{{ install_dir }}"
+        remote_src: yes
+        extra_opts: [--strip-components=1]
+
+    - name: Ensure Mieru binary is executable
+      ansible.builtin.file:
+        path: "{{ install_dir }}/mieru"
+        mode: '0755'
+
+    - name: Create configuration directory for Mita
+      ansible.builtin.file:
+        path: "{{ config_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Template Mita server configuration file
+      ansible.builtin.template:
+        src: "./files/mita_config.json"
+        dest: "{{ config_dir }}/config.json"
+        mode: '0644'
+
+    - name: Create Mita systemd service file
+      ansible.builtin.template:
+        src: "./templates/mita.service.j2"
+        dest: "/etc/systemd/system/{{ service_name }}.service"
+        mode: '0644'
+
+    - name: Reload systemd daemon
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
+    - name: Enable and start Mita service
+      ansible.builtin.systemd:
+        name: "{{ service_name }}"
+        state: started
+        enabled: yes
