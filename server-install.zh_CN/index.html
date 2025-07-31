@@ -956,29 +956,29 @@ sudo<span class="w"> </span>python3<span class="w"> </span>setup.py<span class="
 <p>或者，你也可以使用以下步骤手动安装并配置代理服务器。</p>
 <h2 id="mita"><a class="toclink" href="#mita">下载 mita 安装包</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita_3.16.2_amd64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita_3.17.1_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita_3.16.2_arm64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita_3.17.1_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita-3.16.2-1.x86_64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita-3.17.1-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita-3.16.2-1.aarch64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita-3.17.1-1.aarch64.rpm
 </code></pre></div>
 <h2 id="mita_1"><a class="toclink" href="#mita_1">安装 mita 软件包</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.2_amd64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.17.1_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.2_arm64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.17.1_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.2-1.x86_64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.17.1-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.2-1.aarch64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.17.1-1.aarch64.rpm
 </code></pre></div>
 <p>上述指令也可以用来升级 mita 软件包的版本。</p>
 <h2 id="mita_2"><a class="toclink" href="#mita_2">赋予当前用户操作 mita 的权限，重新登录使此设置生效</a></h2>
@@ -1088,10 +1088,18 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 <span class="w">        </span><span class="p">],</span>
 <span class="w">        </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">&quot;ipRanges&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;8.8.4.4/32&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8.8.8.8/32&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;REJECT&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">&quot;domainNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;chatgpt.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;grok.com&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PROXY&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;proxyNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cloudflare&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="s2">&quot;ipRanges&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
 <span class="w">                </span><span class="s2">&quot;domainNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
-<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PROXY&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;proxyName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloudflare&quot;</span>
+<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;DIRECT&quot;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1099,7 +1107,7 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <ol>
 <li>在 <code>egress</code> -&gt; <code>proxies</code> 属性中列举出站代理服务器的信息。当前版本只支持 socks5 出站，因此 <code>protocol</code> 的值必须设定为 <code>SOCKS5_PROXY_PROTOCOL</code>。如果出站代理服务器需要 socks5 用户名和密码验证，请填写 <code>socks5Authentication</code> 属性。否则，请删除 <code>socks5Authentication</code> 属性。</li>
-<li>在 <code>egress</code> -&gt; <code>rules</code> 属性中列举出站规则。当前版本最多允许用户添加一条规则，且 <code>ipRanges</code>, <code>domainNames</code> 和 <code>action</code> 的值必须与上面的例子相同。<code>proxyName</code> 需要指向一个 <code>egress</code> -&gt; <code>proxies</code> 属性中存在的代理。</li>
+<li>在 <code>egress</code> -&gt; <code>rules</code> 属性中列举出站规则。<code>proxyNames</code> 需要指向 <code>egress</code> -&gt; <code>proxies</code> 属性中存在的代理。</li>
 </ol>
 <p>如果想要关闭出站代理功能，将 <code>egress</code> 属性设置为空 <code>{}</code> 即可。</p>
 <p>注意，链式代理和嵌套代理不同。嵌套代理的网络拓扑结构的一个例子如下图所示：</p>

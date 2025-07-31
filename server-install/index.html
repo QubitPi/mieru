@@ -1148,29 +1148,29 @@ sudo<span class="w"> </span>python3<span class="w"> </span>setup.py
 <p>Or you can manually install and configure proxy server using the steps below.</p>
 <h2 id="download-mita-installation-package"><a class="toclink" href="#download-mita-installation-package">Download mita installation package</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita_3.16.2_amd64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita_3.17.1_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita_3.16.2_arm64.deb
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita_3.17.1_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita-3.16.2-1.x86_64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita-3.17.1-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.16.2/mita-3.16.2-1.aarch64.rpm
+curl<span class="w"> </span>-LSO<span class="w"> </span>https://github.com/enfein/mieru/releases/download/v3.17.1/mita-3.17.1-1.aarch64.rpm
 </code></pre></div>
 <h2 id="install-mita-package"><a class="toclink" href="#install-mita-package">Install mita package</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian / Ubuntu - X86_64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.2_amd64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.17.1_amd64.deb
 
 <span class="c1"># Debian / Ubuntu - ARM 64</span>
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.16.2_arm64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>mita_3.17.1_arm64.deb
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - X86_64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.2-1.x86_64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.17.1-1.x86_64.rpm
 
 <span class="c1"># RedHat / CentOS / Rocky Linux - ARM 64</span>
-sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.16.2-1.aarch64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>--force<span class="w"> </span>mita-3.17.1-1.aarch64.rpm
 </code></pre></div>
 <p>Those instructions can also be used to upgrade the version of mita software package.</p>
 <h2 id="grant-permissions-logout-and-login-again-to-make-the-change-effective"><a class="toclink" href="#grant-permissions-logout-and-login-again-to-make-the-change-effective">Grant permissions, logout and login again to make the change effective</a></h2>
@@ -1280,10 +1280,18 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 <span class="w">        </span><span class="p">],</span>
 <span class="w">        </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">&quot;ipRanges&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;8.8.4.4/32&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8.8.8.8/32&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;REJECT&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">&quot;domainNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;chatgpt.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;grok.com&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PROXY&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;proxyNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cloudflare&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="s2">&quot;ipRanges&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
 <span class="w">                </span><span class="s2">&quot;domainNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
-<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PROXY&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;proxyName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cloudflare&quot;</span>
+<span class="w">                </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;DIRECT&quot;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1291,7 +1299,7 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <ol>
 <li>In the <code>egress</code> -&gt; <code>proxies</code> property, list the information of outbound proxy servers. The current version only supports socks5 outbound, so the value of <code>protocol</code> must be set to <code>SOCKS5_PROXY_PROTOCOL</code>. If the outbound proxy server requires socks5 username and password authentication, please fill in the <code>socks5Authentication</code> property. Otherwise, please remove the <code>socks5Authentication</code> property.</li>
-<li>In the <code>egress</code> -&gt; <code>rules</code> property, list outbound rules. The current version allows users to add up to one rule, and the values of <code>ipRanges</code>, <code>domainNames</code>, and <code>action</code> must be the same as the example above. <code>proxyName</code> needs to point to a proxy that exists in <code>egress</code> -&gt; <code>proxies</code> property.</li>
+<li>In the <code>egress</code> -&gt; <code>rules</code> property, list outbound rules. <code>proxyNames</code> needs to point to proxies that exist in <code>egress</code> -&gt; <code>proxies</code> property.</li>
 </ol>
 <p>If you want to turn off the outbound proxy feature, simply set the <code>egress</code> property to an empty value <code>{}</code>.</p>
 <p>Note that proxy chain is different from nested proxy. An example of the network topology of a nested proxy is shown in the diagram below:</p>
