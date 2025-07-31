@@ -39,3 +39,4 @@ __pycache__/
 /coverage.html
 
 .idea/
+.DS_Store

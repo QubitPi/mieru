@@ -1,0 +1,78 @@
+# Copyright 2025 Jiaqi Liu. All rights reserved.
+---
+name: 'HashiCorp-AWS Tests'
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  packer-file-linting:
+    name: Packer Files Linting
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-packer@v3
+      - run: packer fmt -check -recursive .
+        working-directory: hashicorp/packer
+
+  packer-validate:
+    name: Validate the Syntax and Configuration of Templates
+    needs: packer-file-linting
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Packer
+        uses: hashicorp/setup-packer@v3
+      - name: Load Packer variables
+        run: cp .github/workflows/hashicorp/mita-aws.auto.pkrvars.hcl hashicorp/packer
+      - name: Run Packer init
+        run: packer init .
+        working-directory: hashicorp/packer
+      - name: Run Packer Validate
+        run: packer validate .
+        working-directory: hashicorp/packer
+
+  terraform-file-linting:
+    name: Terraform Files Linting
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - run: terraform fmt -check -recursive
+        working-directory: hashicorp/terraform
+
+  terraform-validate:
+    name: Validate the Terraform Configuration Files
+    needs: terraform-file-linting
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Run Terraform init
+        run: terraform init
+        working-directory: hashicorp/terraform
+      - name: Run Terraform Validate
+        run: terraform validate
+        working-directory: hashicorp/terraform
