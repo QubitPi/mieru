@@ -1107,7 +1107,7 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <ol>
 <li>在 <code>egress</code> -&gt; <code>proxies</code> 属性中列举出站代理服务器的信息。当前版本只支持 socks5 出站，因此 <code>protocol</code> 的值必须设定为 <code>SOCKS5_PROXY_PROTOCOL</code>。如果出站代理服务器需要 socks5 用户名和密码验证，请填写 <code>socks5Authentication</code> 属性。否则，请删除 <code>socks5Authentication</code> 属性。</li>
-<li>在 <code>egress</code> -&gt; <code>rules</code> 属性中列举出站规则。<code>proxyNames</code> 需要指向 <code>egress</code> -&gt; <code>proxies</code> 属性中存在的代理。</li>
+<li>在 <code>egress</code> -&gt; <code>rules</code> 属性中列举出站规则。出站行为包括 <code>DIRECT</code>，<code>PROXY</code> 和 <code>REJECT</code>。其中 <code>PROXY</code> 行为必须指定 <code>proxyNames</code>。<code>proxyNames</code> 需要指向 <code>egress</code> -&gt; <code>proxies</code> 属性中存在的代理。</li>
 </ol>
 <p>如果想要关闭出站代理功能，将 <code>egress</code> 属性设置为空 <code>{}</code> 即可。</p>
 <p>注意，链式代理和嵌套代理不同。嵌套代理的网络拓扑结构的一个例子如下图所示：</p>

@@ -1299,7 +1299,7 @@ sudo<span class="w"> </span>python3<span class="w"> </span>enable_tcp_bbr.py
 </code></pre></div>
 <ol>
 <li>In the <code>egress</code> -&gt; <code>proxies</code> property, list the information of outbound proxy servers. The current version only supports socks5 outbound, so the value of <code>protocol</code> must be set to <code>SOCKS5_PROXY_PROTOCOL</code>. If the outbound proxy server requires socks5 username and password authentication, please fill in the <code>socks5Authentication</code> property. Otherwise, please remove the <code>socks5Authentication</code> property.</li>
-<li>In the <code>egress</code> -&gt; <code>rules</code> property, list outbound rules. <code>proxyNames</code> needs to point to proxies that exist in <code>egress</code> -&gt; <code>proxies</code> property.</li>
+<li>In the <code>egress</code> -&gt; <code>rules</code> property, list outbound rules. Outbound actions include <code>DIRECT</code>, <code>PROXY</code> and <code>REJECT</code>. <code>proxyNames</code> must be set if <code>PROXY</code> action is used. <code>proxyNames</code> needs to point to proxies that exist in <code>egress</code> -&gt; <code>proxies</code> property.</li>
 </ol>
 <p>If you want to turn off the outbound proxy feature, simply set the <code>egress</code> property to an empty value <code>{}</code>.</p>
 <p>Note that proxy chain is different from nested proxy. An example of the network topology of a nested proxy is shown in the diagram below:</p>
