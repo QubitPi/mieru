@@ -1,0 +1,16 @@
+{
+    "portBindings": [
+        {
+            "portRange": "{{ mita_port_range }}",
+            "protocol": "TCP"
+        }
+    ],
+    "users": [
+        {
+            "name": "{{ mita_user_name }}",
+            "password": "{{ mita_user_password }}"
+        }
+    ],
+    "loggingLevel": "INFO",
+    "mtu": 1400
+}

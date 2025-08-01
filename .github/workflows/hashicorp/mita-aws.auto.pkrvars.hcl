@@ -1,0 +1,6 @@
+aws_region         = "us-west-2"
+instance_type      = "t2.small"
+ami_name_prefix    = "my-mita"
+mita_port_range    = "46234-46236"
+mita_user_name     = "myuser"
+mita_user_password = "mypasswd"
