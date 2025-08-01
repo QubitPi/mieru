@@ -102,6 +102,5 @@ build {
       "--extra-vars",
       "mita_user_password=${var.mita_user_password}"
     ]
-    ansible_folder = "./ansible"
   }
 }

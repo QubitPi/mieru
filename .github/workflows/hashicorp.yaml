@@ -23,24 +23,31 @@ jobs:
         working-directory: hashicorp/packer
 
   packer-validate:
-    name: Validate the Syntax and Configuration of Templates
+    name: Validate Packer Files
     needs: packer-file-linting
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        os: [ ubuntu-latest, macos-latest ] # Ansible does not natively support Windows as a control node
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install Packer
         uses: hashicorp/setup-packer@v3
+      - name: Set up Python for Ansible install
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Ansible
+        run: pip install ansible
+        shell: bash
       - name: Load Packer variables
         run: cp .github/workflows/hashicorp/mita-aws.auto.pkrvars.hcl hashicorp/packer
       - name: Run Packer init
         run: packer init .
         working-directory: hashicorp/packer
-      - name: Run Packer Validate
+      - name: Run Packer validate
         run: packer validate .
         working-directory: hashicorp/packer
 
@@ -58,7 +65,7 @@ jobs:
         working-directory: hashicorp/terraform
 
   terraform-validate:
-    name: Validate the Terraform Configuration Files
+    name: Validate Terraform Files
     needs: terraform-file-linting
     strategy:
       fail-fast: false
