@@ -1,4 +1,17 @@
 # Copyright 2025 Jiaqi Liu. All rights reserved.
+packer {
+  required_plugins {
+    amazon = {
+      version = ">= 1.0.0"
+      source  = "github.com/hashicorp/amazon"
+    }
+    ansible = {
+      version = ">= 1.0.0"
+      source  = "github.com/hashicorp/ansible"
+    }
+  }
+}
+
 variable "aws_region" {
   type        = string
   description = "The AWS region to build the AMI in."
