@@ -24,7 +24,7 @@ variable "key_pair_name" {
   description = "The name of an existing EC2 Key Pair to use for SSH access."
   type        = string
   # IMPORTANT: Replace 'your-ssh-key' with the actual name of your SSH key pair in AWS
-  default     = "your-ssh-key"
+  default = "your-ssh-key"
 }
 
 variable "mita_proxy_port_range" {
@@ -94,9 +94,9 @@ data "aws_vpc" "default" {
 }
 
 resource "aws_instance" "mita_server_instance" {
-  ami           = data.aws_ami.mita_server_ami.id
-  instance_type = var.instance_type
-  key_name      = var.key_pair_name
+  ami                    = data.aws_ami.mita_server_ami.id
+  instance_type          = var.instance_type
+  key_name               = var.key_pair_name
   vpc_security_group_ids = [aws_security_group.mita_sg.id]
 
   tags = {
