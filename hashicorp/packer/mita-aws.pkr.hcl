@@ -1,16 +1,16 @@
 # Copyright 2025 Jiaqi Liu. All rights reserved.
 variable "aws_region" {
-  type    = string
+  type        = string
   description = "The AWS region to build the AMI in."
 }
 
 variable "instance_type" {
-  type    = string
+  type        = string
   description = "The EC2 instance type to use for building the AMI."
 }
 
 variable "ami_name_prefix" {
-  type    = string
+  type        = string
   description = "Prefix for the name of the generated AMI."
 }
 
@@ -27,19 +27,19 @@ variable "ubuntu_codename" {
 }
 
 variable "mita_port_range" {
-  type    = string
+  type        = string
   description = "The portRange value of portBindings field inside mita JSON config file. The ranged value must be from 1025 to 65535. For example, '46234-46236'"
 }
 
 variable "mita_user_name" {
-  type    = string
+  type        = string
   description = "The username for connection authentication from mieru client to mita server"
 }
 
 variable "mita_user_password" {
-  type    = string
+  type        = string
   description = "The password for connection authentication from mieru client to mita server"
-  sensitive = true
+  sensitive   = true
 }
 
 source "amazon-ebs" "mita_server" {
@@ -59,9 +59,9 @@ source "amazon-ebs" "mita_server" {
   }
 
   tags = {
-    Name        = "${var.ami_name_prefix}"
-    Description = "AWS AMI with Mita (Mieru) SOCKS5 proxy server installed and configured."
-    Project     = "MitaProxy"
+    Name          = "${var.ami_name_prefix}"
+    Description   = "AWS AMI with Mita (Mieru) SOCKS5 proxy server installed and configured."
+    Project       = "MitaProxy"
     UbuntuVersion = var.ubuntu_version
   }
 }
