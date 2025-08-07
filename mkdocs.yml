@@ -124,5 +124,6 @@ nav:
       - 'Security Guide': ./security.md
       - 'Maintenance & Troubleshooting': ./operation.md
   - 'Development':
+      - 'AWS': ./deployment.md
       - 'Compilation': ./compile.md
       - 'Proxy Protocol': ./protocol.md
