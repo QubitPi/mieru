@@ -1,0 +1,16 @@
+[Unit]
+Description=Mita (Mieru) SOCKS5 Proxy Server
+After=network.target
+
+[Service]
+User=root
+Group=root
+# Adjust ExecStart if the binary name or path changes
+ExecStart={{ install_dir }}/mieru -c {{ config_dir }}/config.json
+Restart=always
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
